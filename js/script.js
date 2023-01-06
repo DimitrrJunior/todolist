@@ -8,12 +8,16 @@ let todoList = [];
 
 wordBtnNode.addEventListener('click', function () {
      event.preventDefault();
-     let newTodo = {
-          todo: wordInputNode.value,
-          important: false
-     };
-     todoList.push(newTodo);
-     displayMessages();
+     if (wordInputNode.value == '') {
+          alert('Введите задачу на день в поле ввода');
+     } else {
+          let newTodo = {
+               todo: wordInputNode.value,
+               important: false
+          };
+          todoList.push(newTodo);
+          displayMessages();
+     }
      
 });
 
